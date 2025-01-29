@@ -7,6 +7,7 @@ int modify_values(int a) {
 // Передача аргументов по ссылке
 int modify_reference(int& a) {
     a = 6;
+    return a;
 }
 
 int main() {
