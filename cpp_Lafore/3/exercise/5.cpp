@@ -1,7 +1,11 @@
 #include <iostream>
-#include <iomanip>
 int main() {
-    for (int i = 1; i <= 20; i+=2) {
+    const int n = 20;
+    for (int i = 1; i <= n; i+=2) {
+        int spaces = n - i;
+        for (int s = 1; s <= spaces; s++) {
+            std::cout << ' ';
+        }
         for (int j = 1; j <= i; j++) {
             std::cout << 'X';
         }
