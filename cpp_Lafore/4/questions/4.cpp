@@ -10,5 +10,10 @@ int main() {
     time time2;
     time2.hrs = 11;
     std::cout << time2.hrs << std::endl;
+
+    time time1 = {11, 10, 59};
+    std::cout << time1.hrs << std::endl;
+    std::cout << time1.mins << std::endl;
+    std::cout << time1.sees << std::endl;
     return 0;
 }
