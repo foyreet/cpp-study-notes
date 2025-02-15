@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    struct {
+    struct time {
         int hrs;
         int mins;
         int sees;
