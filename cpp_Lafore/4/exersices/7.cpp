@@ -23,29 +23,30 @@ int main() {
     char sep_1;
     char sep_2;
     int a;
+
     std::cin >> employee.number_employee >> employee.salary >> a 
         >> employee.date.day >> sep_1 >> employee.date.month 
         >> sep_2 >> employee.date.year;
-
+    employee.etype = static_cast<Etype>(a);
     std::cout << employee.number_employee << '\n' << employee.salary << '\n'; 
         
-    switch (a) {
-        case 0:
+    switch (employee.etype) {
+        case accountant:
             std::cout << "accountant";
             break;
-        case 1:
+        case laborer:
             std::cout << "laborer";
             break;
-        case 2:
+        case secretary:
             std::cout << "secretary";
             break;
-        case 3:
+        case manager:
             std::cout << "manager";
             break;
-        case 4:
+        case executive:
             std::cout << "executive";
             break;
-        case 5:
+        case researcher:
             std::cout << "researcher";
             break;
     }
