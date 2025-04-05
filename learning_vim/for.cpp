@@ -7,10 +7,9 @@ int main() {
         std::cout << i << std::endl;
     }
     
-    // std::vector<int> vec1 = {1, 2, 3, 4, 5};
+    std::vector<int> vec1 = {1, 2, 3, 4, 5};
     std::vector<int> vec2;
-    vec2.as 
-    
+    vec2.assign    
     int
 
     return 0;

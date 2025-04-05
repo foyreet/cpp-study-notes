@@ -51,5 +51,8 @@ int main() {
     for (int v : vec3) std::cout << v << " ";
     std::cout << '\n';
 
+    std::cout << "capacity() vec1: " << '\n';
+    std::cout << vec1.capacity();
+
 
 }

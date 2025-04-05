@@ -106,7 +106,29 @@ class Matrix {
 
      // Вычисление определителя квадратной матрицы
 
-     long long det() {
+     // Удаление строки и столбца
+     void erase(int row, int col) {
+	elements.erase(elements.begin() + row);
+	for (auto& row : elements) {
+	    row.erase(row.begin() + col);
+	}
+     }
+
+     // Метод для создания минора в строке 0 и столбце j
+     Matrix get_minor(int row_to_remove, int col_to_remove) {
+	 std::vector<std::vector<int>> result(this->rows, 
+		 std::vector<int>(this->cols));
+	 for (int i = 0; i < this->rows; i++) {
+	    for (int j = 0; j < this->cols; j++) {
+		result[i][j] = this->elements[i][j];
+	    }
+	 }
+
+	 result.erase(result.begin(), )
+	return Matrix(this->cols - 1, this->rows - 1, result);
+     }
+
+     /*long long det() {
 	if (this->rows != this->cols) {
 	    throw std::invalid_argument("Матрица не квадратная");
 	}
@@ -122,19 +144,20 @@ class Matrix {
 	}
 
 	// Рекурсивный шаг
-	
+	long long result;
+
 	for (int i = 0; i < this->rows; i++) {
 	    for (int j = 0; j < this->cols; j++) {
 		result = result + elements[0][j] * det()
 	    }
 	}
-     }
+     }*/
 };
 
 int main() {
-    Matrix m1(2, 3, {{2, 1, 3}, {3, 4, 1}});
+    Matrix m1(3, 3, {{2, 1, 3}, {3, 4, 1}, {4, 5, 6}});
     Matrix m2(3, 2, {{2, 3}, {3, 4}, {3, 4}});
     Matrix m3(2, 2, {{2, 2}, {3, 4}});
-    long long result = m3.det();
-    std::cout << result;
+    Matrix m4 = m1.get_minor(0,1);
+    m4.display();
  }
